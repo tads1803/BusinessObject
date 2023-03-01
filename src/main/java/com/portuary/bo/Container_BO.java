@@ -16,12 +16,13 @@ public class Container_BO {
     
     /**
      * Retorna o relatório com a quantidade de Importações e Exportações
+     * @param dados String contendo um JSON com os dados do filtro a ser aplicado
      * @return JSONObject contendo os dados filtrados
      * @throws java.lang.Exception
      * @throws com.portuary.dem.exceptions.JSONException
      */
-    public JSONObject GetRelatorioByCategoria() throws Exception, JSONException{
-        return (new Container_DAO()).getRelatorioByCategoria();
+    public JSONObject GetRelatorioByCategoria(String dados) throws Exception, JSONException{
+        return (new Container_DAO()).getRelatorioByCategoria(new JSONObject(dados));
     }
     
 }

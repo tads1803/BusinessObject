@@ -16,12 +16,13 @@ public class Movimentacao_BO {
     
     /**
      * Retorna o relatório com a quantidade por Tipo de Movimento
+     * @param dados String contendo um JSON com os dados do filtro a ser aplicado
      * @return JSONObject contendo os dados filtrados
      * @throws java.lang.Exception
      * @throws com.portuary.dem.exceptions.JSONException
      */
-    public JSONObject GetRelatorioByMovimento() throws Exception, JSONException{
-        return (new Movimentacao_DAO()).getRelatorioByMovimentacao();
+    public JSONObject GetRelatorioByMovimento(String dados) throws Exception, JSONException{
+        return (new Movimentacao_DAO()).getRelatorioByMovimentacao(new JSONObject(dados));
     }
     
 }
